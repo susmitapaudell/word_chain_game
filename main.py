@@ -13,13 +13,12 @@ def play():
         
         chk = [w for w in collection if w[0] == first_letter_for_bot and w not in used_words]
         
-        bot_word = random.choice(chk)
-        
-        if (bot_word == None):
+        if not chk:
             print('bot cant find any word, bot lost')
-            exit()
-
-        print('Bot: ', bot_word)
+            quit()
+        else:    
+            bot_word = random.choice(chk)
+            print('Bot: ', bot_word)
 
         used_words.append(bot_word)
 
